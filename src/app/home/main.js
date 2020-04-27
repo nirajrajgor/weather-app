@@ -5,7 +5,7 @@ import degreeSymbol from "../../assets/images/degree-symbol.png";
 const Main = props => {
 	return (
 		<div className="main-wrapper">
-			<img src={mumbai} alt="mumbai location" />
+			<img src={mumbai} alt="mumbai city view" />
 			<div className="info-wrapper">
 				<h2>17<img src={degreeSymbol} alt="degree symbol" /></h2>
 				<div className="city-info">
