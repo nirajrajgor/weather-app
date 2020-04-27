@@ -12,6 +12,46 @@
 }
 
 .main-wrapper {
-	img {
+	position: relative;
+	& > img {
+		width: 100%;
+		min-height: 100vh;
+	}
+	.info-wrapper {
+		position: absolute;
+		bottom: 0;
+		// background-color: rgba(0, 0, 0, 0.4);
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) 100%) no-repeat;
+		right: 0;
+		left: 0;
+		color: $white;
+		display: flex;
+		align-items: center;
+		height: 10rem;
+		padding: 3rem 3rem;
+		h2 {
+			@include font($white, "OpenSans-Bold", 9rem, bold);
+			margin: 0;
+			margin-right: 2rem;
+			img {
+				width: 2rem;
+				vertical-align: top;
+				margin: 3rem 0 0 0.5rem;
+			}
+		}
+		.city-info {
+			flex: 1;
+			h1 {
+				@include font($white, "OpenSans-Light", 2.4rem, 400);
+				margin: 0.5rem 0 0;
+				strong {
+					font-family: "OpenSans-Bold", Arial, Helvetica, sans-serif;
+				}
+			}
+			h3 {
+				@include font($white, "OpenSans-SemiBold", 1.6rem, 600);
+				margin: 0.3rem 0 0;
+			}
+		}
 	}
 }
