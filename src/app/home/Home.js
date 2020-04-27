@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Main from './main';
 
 class Home extends Component {
 	constructor(props) {
@@ -11,7 +13,12 @@ class Home extends Component {
 
 	render() {
 		return (
-			<div>Home Component</div>
+			<div className="container">
+				<main>
+					<Main />
+				</main>
+				<aside></aside>
+			</div>
 		)
 	}
 }
