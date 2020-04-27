@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Main from './main';
+import Sidebar from './Sidebar';
 
 class Home extends Component {
 	constructor(props) {
@@ -17,7 +18,9 @@ class Home extends Component {
 				<main>
 					<Main />
 				</main>
-				<aside></aside>
+				<aside>
+					<Sidebar />
+				</aside>
 			</div>
 		)
 	}
