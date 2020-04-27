@@ -13,9 +13,10 @@
 
 .main-wrapper {
 	position: relative;
+	height: 100vh;
 	& > img {
 		width: 100%;
-		min-height: 100vh;
+		height: 100%;
 	}
 	.info-wrapper {
 		position: absolute;
@@ -27,7 +28,7 @@
 		color: $white;
 		display: flex;
 		align-items: center;
-		height: 10rem;
+		// height: 10rem;
 		padding: 3rem 3rem;
 		h2 {
 			@include font($white, "OpenSans-Bold", 9rem, bold);
@@ -42,7 +43,7 @@
 		.city-info {
 			flex: 1;
 			h1 {
-				@include font($white, "OpenSans-Light", 2.4rem, 400);
+				@include font($white, "OpenSans-Light", 2.4rem, 300);
 				margin: 0.5rem 0 0;
 				strong {
 					font-family: "OpenSans-Bold", Arial, Helvetica, sans-serif;
@@ -53,5 +54,58 @@
 				margin: 0.3rem 0 0;
 			}
 		}
+	}
+}
+
+.search-wrapper {
+	width: 100%;
+	padding: 1rem 2rem;
+	background-color: $white;
+	input {
+		border-radius: 2rem;
+		padding: 1.5rem 2rem;
+		outline: none;
+		box-shadow: none;
+		background-color: $background-color;
+		border: none;
+		width: 100%;
+		font-size: 1.8rem;
+		&::placeholder {
+			@include font(#6e6e6e, "OpenSans-Regular", 1.8rem, 400);
+		}
+	}
+}
+
+.info-card {
+	background-color: $white;
+	padding: 2rem 3rem;
+	border-radius: 2rem;
+	margin: 3rem 2rem 2rem;
+	h3 {
+		@include font($heading-1, "OpenSans-SemiBold", 1.8rem, 600);
+		margin: 0 0 2rem;
+	}
+	.item {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1.5rem;
+		h4 {
+			@include font($line-text-1, "OpenSans-Regular", 1.5rem, 400);
+			margin: 0;
+		}
+		h5 {
+			@include font($line-text-1, "OpenSans-SemiBold", 1.5rem, 600);
+			margin: 0;
+		}
+	}
+}
+
+.img-card {
+	margin: 3rem 2rem;
+	img {
+		width: 100%;
+		object-fit: cover;
+		border-radius: 2rem;
+		height: 18rem;
 	}
 }
