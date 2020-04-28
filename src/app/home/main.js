@@ -12,10 +12,13 @@ const Main = props => {
 					<img src={mumbai} alt={"Default mumbai location"} />
 			}
 			<div className="info-wrapper">
-				<h2>17<img src={degreeSymbol} alt="degree symbol" /></h2>
+				<h2>
+					{props.weather && Math.round(props.weather.temp)}
+					<img src={degreeSymbol} alt="degree symbol" />
+				</h2>
 				<div className="city-info">
-					<h1><strong>Mumbai</strong>, Maharashtra</h1>
-					<h3>Monday, 28 April 2020</h3>
+					<h1><strong>{props.cityName}</strong></h1>
+					<h3>{new Date().toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</h3>
 				</div>
 			</div>
 		</div>

@@ -14,22 +14,29 @@ const Sidebar = props => {
 			</div>
 			<div className="info-card">
 				<h3>Weather Details</h3>
-				<div className="item">
-					<h4>Cloudy</h4>
-					<h5>68%</h5>
-				</div>
-				<div className="item">
-					<h4>Precipitation</h4>
-					<h5>10%</h5>
-				</div>
-				<div className="item">
-					<h4>Humidity</h4>
-					<h5>30%</h5>
-				</div>
-				<div className="item">
-					<h4>Wind</h4>
-					<h5>8 Km/h</h5>
-				</div>
+				{
+					props.weatherData ?
+						<>
+							<div className="item">
+								<h4>Cloudy</h4>
+								<h5>{props.weatherData.clouds.all}%</h5>
+							</div>
+							<div className="item">
+								<h4>Pressure</h4>
+								<h5>{props.weatherData.main.pressure} hPa</h5>
+							</div>
+							<div className="item">
+								<h4>Humidity</h4>
+								<h5>{props.weatherData.main.humidity}%</h5>
+							</div>
+							<div className="item">
+								<h4>Wind</h4>
+								<h5>{props.weatherData.wind.speed} m/s</h5>
+							</div>
+						</>
+						:
+						<h2>Loading...</h2>
+				}
 			</div>
 			<div className="info-card">
 				<h3>Temperature</h3>
