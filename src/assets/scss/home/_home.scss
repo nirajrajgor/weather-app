@@ -45,7 +45,7 @@
 		.city-info {
 			flex: 1;
 			h1 {
-				@include font($white, "OpenSans-Light", 2.4rem, 300);
+				@include font($white, "OpenSans-Light", 2.8rem, 300);
 				margin: 0.5rem 0 0;
 				strong {
 					font-family: "OpenSans-Bold", Arial, Helvetica, sans-serif;
