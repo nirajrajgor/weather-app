@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Main from './main';
 import Sidebar from './Sidebar';
-import { searchPhotoApi } from './Api';
+import { searchPhotoApi, getWeatherApi } from './Api';
 import { getRandomInt } from '../utils/ReusableFunctions';
-
 
 // as long as it continues to be invoked, it will not be triggered
 const debounce = (func, delay) => {
@@ -31,6 +30,7 @@ class Home extends Component {
 		if (this.props.homeState.photos.length === 0) {
 			this.props.searchPhotoApi();
 		}
+		this.props.getWeatherApi();
 	}
 
 	debounced = debounce((search) => {
@@ -38,6 +38,7 @@ class Home extends Component {
 		console.log("INSIDE DEBPUNCE", search);
 		console.log('====================================');
 		this.props.searchPhotoApi(search);
+		this.props.getWeatherApi(search);
 	}, 600);
 
 
@@ -61,6 +62,8 @@ class Home extends Component {
 				<main>
 					<Main
 						photo={this.props.homeState.photos[0]}
+						cityName={this.props.homeState.weatherData ? this.props.homeState.weatherData.name : "Mumbai"}
+						weather={this.props.homeState.weatherData ? this.props.homeState.weatherData.main : { temp: 35 }}
 					/>
 				</main>
 				<aside>
@@ -68,6 +71,7 @@ class Home extends Component {
 						photo={this.props.homeState.photos[1]}
 						search={this.state.search}
 						onChange={this.onChange}
+						weatherData={this.props.homeState.weatherData}
 					/>
 				</aside>
 			</div>
@@ -79,8 +83,8 @@ const mapStateToProps = state => ({
 	homeState: state.homeState
 });
 const mapDispatchToProps = {
-	// getPosts: fetchPosts
-	searchPhotoApi
+	searchPhotoApi,
+	getWeatherApi
 }
 Home.propTypes = {
 	getPosts: PropTypes.func
