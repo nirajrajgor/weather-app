@@ -1,6 +1,6 @@
-import './index.css';
+import './styles/index.css';
 
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './services/serviceWorker';
 
 import App from './App';
 import { Provider } from 'react-redux';
