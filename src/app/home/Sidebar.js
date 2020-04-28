@@ -5,7 +5,12 @@ const Sidebar = props => {
 	return (
 		<>
 			<div className="search-wrapper">
-				<input type="text" placeholder="Search" />
+				<input
+					type="text"
+					placeholder="Search City"
+					value={props.search}
+					onChange={props.onChange}
+				/>
 			</div>
 			<div className="info-card">
 				<h3>Weather Details</h3>
@@ -46,7 +51,12 @@ const Sidebar = props => {
 				</div>
 			</div>
 			<div className="img-card">
-				<img src={mumbai} alt="another mumbai view" />
+				{
+					props.photo ?
+						<img src={props.photo.urls.small} alt={props.photo.alt_description} />
+						:
+						<img src={mumbai} alt={"Default mumbai location"} />
+				}
 			</div>
 		</>
 
