@@ -3,19 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Main from './main';
 import Sidebar from './Sidebar';
-import { searchPhotoApi, getWeatherApi } from './Api';
-import { getRandomInt } from '../utils/ReusableFunctions';
-
-// as long as it continues to be invoked, it will not be triggered
-const debounce = (func, delay) => {
-	let inDebounce
-	return function () {
-		const context = this
-		const args = arguments
-		clearTimeout(inDebounce)
-		inDebounce = setTimeout(() => func.apply(context, args), delay)
-	}
-}
+import { searchPhotoApi, getWeatherApi, getForcastApi } from './Api';
+import { debounce } from '../utils/ReusableFunctions';
 
 class Home extends Component {
 	constructor(props) {
@@ -26,11 +15,13 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
-		console.log("call search api");
 		if (this.props.homeState.photos.length === 0) {
 			this.props.searchPhotoApi();
 		}
+		// TO GET TODAYS WEATHER DATA
 		this.props.getWeatherApi();
+		// TO GET FORCAST DATA FOR NEXT 5 DAYS.
+		this.props.getForcastApi();
 	}
 
 	debounced = debounce((search) => {
@@ -39,20 +30,11 @@ class Home extends Component {
 		console.log('====================================');
 		this.props.searchPhotoApi(search);
 		this.props.getWeatherApi(search);
+		this.props.getForcastApi(search);
 	}, 600);
-
-
-
 
 	onChange = (e) => {
 		this.setState({ search: e.target.value }, () => this.debounced(this.state.search));
-
-		// this.setState({ search: e.target.value }, () => {
-		// 	debounce(() => {
-		// 		console.log("inside debounce");
-
-		// 	}, 300)
-		// });
 	}
 
 
@@ -72,6 +54,7 @@ class Home extends Component {
 						search={this.state.search}
 						onChange={this.onChange}
 						weatherData={this.props.homeState.weatherData}
+						forcastData={this.props.homeState.forcastData}
 					/>
 				</aside>
 			</div>
@@ -84,10 +67,11 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = {
 	searchPhotoApi,
-	getWeatherApi
+	getWeatherApi,
+	getForcastApi
 }
 Home.propTypes = {
-	getPosts: PropTypes.func
+	// getPosts: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
