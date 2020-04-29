@@ -7,7 +7,7 @@ const Main = props => {
 		<div className="main-wrapper">
 			{
 				props.photo ?
-					<img src={props.photo.urls.full} alt={props.photo.alt_description} />
+					<img src={props.photo.urls.regular} alt={props.photo.alt_description} />
 					:
 					<img src={mumbai} alt={"Default mumbai location"} />
 			}
