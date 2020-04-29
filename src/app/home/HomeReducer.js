@@ -10,8 +10,8 @@ const HomeReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case GET_PHOTOS:
 			let randomNum1, randomNum2;
-			randomNum1 = getRandomInt(9);
-			randomNum2 = getRandomInt(9);
+			randomNum1 = getRandomInt(action.data.length);
+			randomNum2 = getRandomInt(action.data.length);
 			while (randomNum1 === randomNum2) {
 				randomNum2 = getRandomInt(9);
 			}
