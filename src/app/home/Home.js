@@ -25,12 +25,11 @@ class Home extends Component {
 	}
 
 	debounced = debounce((search) => {
-		console.log('====================================');
-		console.log("INSIDE DEBPUNCE", search);
-		console.log('====================================');
-		this.props.searchPhotoApi(search);
-		this.props.getWeatherApi(search);
-		this.props.getForcastApi(search);
+		if (search !== "") {
+			this.props.searchPhotoApi(search);
+			this.props.getWeatherApi(search);
+			this.props.getForcastApi(search);
+		}
 	}, 600);
 
 	onChange = (e) => {
