@@ -62,20 +62,26 @@
 
 .search-wrapper {
 	width: 100%;
-	padding: 1rem 2rem;
+	padding: 2rem 2rem 1rem;
+	position: relative;
 	// background-color: $white;
 	input {
 		border-radius: 2rem;
-		padding: 1.5rem 3rem;
+		padding: 1.5rem 3rem 1.5rem 6rem;
 		outline: none;
 		box-shadow: none;
 		// background-color: $background-color;
 		border: none;
 		width: 100%;
 		font-size: 1.8rem;
+		box-shadow: 0 15px 20px #e6e8f2;
 		&::placeholder {
 			@include font(#6e6e6e, "OpenSans-Regular", 1.8rem, 400);
 		}
+	}
+	.search-icon {
+		position: absolute;
+		padding: 1.7rem 0 0 3rem;
 	}
 }
 
@@ -93,11 +99,11 @@
 		justify-content: space-between;
 		margin-bottom: 1.5rem;
 		h4 {
-			@include font($line-text-1, "OpenSans-Regular", 1.5rem, 400);
+			@include font($line-text-1, "OpenSans-Regular", 1.4rem, 400);
 			margin: 0;
 		}
 		h5 {
-			@include font($line-text-1, "OpenSans-SemiBold", 1.5rem, 600);
+			@include font($line-text-1, "OpenSans-SemiBold", 1.4rem, 600);
 			margin: 0;
 		}
 	}

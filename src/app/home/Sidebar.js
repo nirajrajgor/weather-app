@@ -1,14 +1,13 @@
 import React from 'react';
 import mumbai from "../../assets/images/mumbai.jpg";
+import searchIcon from "../../assets/images/search-icon.png";
 import { formatDateTime } from '../utils/ReusableFunctions';
 
 const Sidebar = props => {
-	console.log('====================================');
-	console.log("props.forcastData", props.forcastData);
-	console.log('====================================');
 	return (
 		<>
 			<div className="search-wrapper">
+				<img src={searchIcon} alt="search icon" className="search-icon" />
 				<input
 					type="text"
 					placeholder="Search City"
@@ -46,7 +45,7 @@ const Sidebar = props => {
 				}
 			</div>
 			<div className="info-card">
-				<h3>Temperature Forcast</h3>
+				<h3>Weather Forecast</h3>
 				{
 					props.forcastData ?
 						props.forcastData.list ?
