@@ -44,8 +44,7 @@ class Home extends Component {
 				<main>
 					<Main
 						photo={this.props.homeState.photos[0]}
-						cityName={this.props.homeState.weatherData ? this.props.homeState.weatherData.name : "Mumbai"}
-						weather={this.props.homeState.weatherData ? this.props.homeState.weatherData.main : { temp: 35 }}
+						weather={this.props.homeState.weatherData}
 					/>
 				</main>
 				<aside>

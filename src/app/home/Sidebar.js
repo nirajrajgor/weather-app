@@ -3,6 +3,9 @@ import mumbai from "../../assets/images/mumbai.jpg";
 import { formatDateTime } from '../utils/ReusableFunctions';
 
 const Sidebar = props => {
+	console.log('====================================');
+	console.log("props.forcastData", props.forcastData);
+	console.log('====================================');
 	return (
 		<>
 			<div className="search-wrapper">
@@ -17,24 +20,27 @@ const Sidebar = props => {
 				<h3>Weather Details</h3>
 				{
 					props.weatherData ?
-						<>
-							<div className="item">
-								<h4>Cloudy</h4>
-								<h5>{props.weatherData.clouds.all}%</h5>
-							</div>
-							<div className="item">
-								<h4>Pressure</h4>
-								<h5>{props.weatherData.main.pressure} hPa</h5>
-							</div>
-							<div className="item">
-								<h4>Humidity</h4>
-								<h5>{props.weatherData.main.humidity}%</h5>
-							</div>
-							<div className="item">
-								<h4>Wind</h4>
-								<h5>{props.weatherData.wind.speed} m/s</h5>
-							</div>
-						</>
+						props.weatherData.main ?
+							<>
+								<div className="item">
+									<h4>Cloudy</h4>
+									<h5>{props.weatherData.clouds.all}%</h5>
+								</div>
+								<div className="item">
+									<h4>Pressure</h4>
+									<h5>{props.weatherData.main.pressure} hPa</h5>
+								</div>
+								<div className="item">
+									<h4>Humidity</h4>
+									<h5>{props.weatherData.main.humidity}%</h5>
+								</div>
+								<div className="item">
+									<h4>Wind</h4>
+									<h5>{props.weatherData.wind.speed} m/s</h5>
+								</div>
+							</>
+							:
+							<h2>{props.weatherData.message}</h2>
 						:
 						<h2>Loading...</h2>
 				}
@@ -43,12 +49,15 @@ const Sidebar = props => {
 				<h3>Temperature Forcast</h3>
 				{
 					props.forcastData ?
-						props.forcastData.list.slice(0, 4).map(item => (
-							<div className="item" key={item.dt}>
-								<h4>{formatDateTime(item.dt)}</h4>
-								<h5>{Math.round(item.main.temp)}º</h5>
-							</div>
-						))
+						props.forcastData.list ?
+							props.forcastData.list.slice(0, 4).map(item => (
+								<div className="item" key={item.dt}>
+									<h4>{formatDateTime(item.dt)}</h4>
+									<h5>{Math.round(item.main.temp)}º</h5>
+								</div>
+							))
+							:
+							<h2>{props.forcastData.message}</h2>
 						:
 						<h2>Loading...</h2>
 				}
