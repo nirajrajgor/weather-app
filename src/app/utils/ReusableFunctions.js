@@ -14,5 +14,5 @@ export const debounce = (func, delay) => {
 export const formatDateTime = (unixTime) => {
 	// Create a new JavaScript Date object based on the timestamp
 	// multiplied by 1000 so that the argument is in milliseconds, not seconds.
-	return new Date(unixTime * 1000).toLocaleString('en-IN', { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+	return new Date(unixTime * 1000).toLocaleString('en-IN', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
 }
