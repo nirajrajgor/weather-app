@@ -1,5 +1,5 @@
 # Weather app
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is still work in progress. I am constantly pushing the code, i have integrated open weather api and unsplash api. The keys being private not pushed to github. I will complete the project and host it by this weekend.
 
 ## Available Scripts
 
