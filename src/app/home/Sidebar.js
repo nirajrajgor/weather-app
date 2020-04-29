@@ -1,5 +1,6 @@
 import React from 'react';
 import mumbai from "../../assets/images/mumbai.jpg";
+import { formatDateTime } from '../utils/ReusableFunctions';
 
 const Sidebar = props => {
 	return (
@@ -39,23 +40,18 @@ const Sidebar = props => {
 				}
 			</div>
 			<div className="info-card">
-				<h3>Temperature</h3>
-				<div className="item">
-					<h4>06:00AM</h4>
-					<h5>17º</h5>
-				</div>
-				<div className="item">
-					<h4>12:00AM</h4>
-					<h5>30º</h5>
-				</div>
-				<div className="item">
-					<h4>06:00PM</h4>
-					<h5>10º</h5>
-				</div>
-				<div className="item">
-					<h4>12:00PM</h4>
-					<h5>15º</h5>
-				</div>
+				<h3>Temperature Forcast</h3>
+				{
+					props.forcastData ?
+						props.forcastData.list.slice(0, 4).map(item => (
+							<div className="item" key={item.dt}>
+								<h4>{formatDateTime(item.dt)}</h4>
+								<h5>{Math.round(item.main.temp)}º</h5>
+							</div>
+						))
+						:
+						<h2>Loading...</h2>
+				}
 			</div>
 			<div className="img-card">
 				{
