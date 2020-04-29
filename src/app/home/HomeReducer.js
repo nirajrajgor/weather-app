@@ -1,4 +1,4 @@
-import { GET_PHOTOS, GET_WEATHER_DATA } from "./ActionTypes";
+import { GET_PHOTOS, GET_WEATHER_DATA, GET_FORCAST_DATA } from "./ActionTypes";
 import { getRandomInt } from "../utils/ReusableFunctions";
 
 const INITIAL_STATE = {
@@ -24,6 +24,11 @@ const HomeReducer = (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				weatherData: action.data
+			}
+		case GET_FORCAST_DATA:
+			return {
+				...state,
+				forcastData: action.data
 			}
 		default:
 			return state

@@ -1,3 +1,3 @@
 export const GET_PHOTOS = 'GET_PHOTOS';
 export const GET_WEATHER_DATA = 'GET_WEATHER_DATA';
-export const GET_FORCATS_DATA = 'GET_FORCATS_DATA';
+export const GET_FORCAST_DATA = 'GET_FORCAST_DATA';

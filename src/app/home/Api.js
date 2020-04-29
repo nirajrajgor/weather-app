@@ -1,6 +1,6 @@
 import { toJson } from 'unsplash-js';
 import { unsplash } from "../../App";
-import { getPhotos, getWeather } from './HomeAction';
+import { getPhotos, getWeather, getForcast } from './HomeAction';
 
 export const searchPhotoApi = (cityName = "mumbai") => {
 	return function (dispatch, getState) {
@@ -25,6 +25,19 @@ export const getWeatherApi = (cityName = "mumbai") => {
 			.then((data) => {
 				console.log(data);
 				dispatch(getWeather(data));
+			}).catch((error) => {
+				console.error('Error:', error);
+			});
+	};
+}
+
+export const getForcastApi = (cityName = "mumbai") => {
+	return function (dispatch, getState) {
+		fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.REACT_APP_WEATHER_APP_ID}&units=metric`)
+			.then((response) => response.json())
+			.then((data) => {
+				console.log(data);
+				dispatch(getForcast(data));
 			}).catch((error) => {
 				console.error('Error:', error);
 			});
