@@ -1,0 +1,38 @@
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+	.container {
+		display: block;
+		main {
+			height: 45rem;
+		}
+		aside {
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
+	}
+	.main-wrapper {
+		.search-wrapper {
+			position: absolute;
+			top: 2rem;
+			input {
+				box-shadow: none;
+			}
+		}
+		.info-wrapper {
+			padding: 1rem 2rem;
+			h2 {
+				font-size: 8rem;
+				img {
+					width: 1.6rem;
+					margin-top: 2.8rem;
+				}
+			}
+		}
+	}
+	.info-card {
+		margin: 0rem 2rem 3rem;
+	}
+	.img-card {
+		margin-bottom: 0;
+	}
+}
