@@ -10,11 +10,17 @@ class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			search: ""
+			search: "",
+			width: 0, // REPRESENTS THE SCREEN WIDTH
+			height: 0 // REPRESENTS THE SCREEN HEIGHT
 		}
 	}
 
 	componentDidMount() {
+		// TO GET THE INITIAL SCREEN WIDTH AND HEIGHT.
+		this.updateWindowDimensions();
+		window.addEventListener('resize', this.updateWindowDimensions);
+
 		if (this.props.homeState.photos.length === 0) {
 			this.props.searchPhotoApi();
 		}
@@ -36,6 +42,14 @@ class Home extends Component {
 		this.setState({ search: e.target.value }, () => this.debounced(this.state.search));
 	}
 
+	updateWindowDimensions = () => {
+		this.setState({ width: window.innerWidth, height: window.innerHeight });
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.updateWindowDimensions);
+	}
+
 
 	render() {
 		return (
@@ -44,11 +58,15 @@ class Home extends Component {
 					<Main
 						photo={this.props.homeState.photos[0]}
 						weather={this.props.homeState.weatherData}
+						isMobile={this.state.width < 575.98}
+						search={this.state.search}
+						onChange={this.onChange}
 					/>
 				</main>
 				<aside>
 					<Sidebar
 						photo={this.props.homeState.photos[1]}
+						isMobile={this.state.width < 575.98}
 						search={this.state.search}
 						onChange={this.onChange}
 						weatherData={this.props.homeState.weatherData}
