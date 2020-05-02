@@ -5,6 +5,7 @@ import Main from './main';
 import Sidebar from './Sidebar';
 import { searchPhotoApi, getWeatherApi, getForcastApi } from './Api';
 import { debounce } from '../utils/ReusableFunctions';
+import { changeDataOrder } from './HomeAction';
 
 class Home extends Component {
 	constructor(props) {
@@ -69,6 +70,7 @@ class Home extends Component {
 						isMobile={this.state.width < 575.98}
 						search={this.state.search}
 						onChange={this.onChange}
+						onViewImage={this.props.changeDataOrder}
 						weatherData={this.props.homeState.weatherData}
 						forcastData={this.props.homeState.forcastData}
 					/>
@@ -84,7 +86,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
 	searchPhotoApi,
 	getWeatherApi,
-	getForcastApi
+	getForcastApi,
+	changeDataOrder
 }
 Home.propTypes = {
 	// getPosts: PropTypes.func

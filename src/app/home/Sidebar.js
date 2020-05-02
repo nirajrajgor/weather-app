@@ -62,7 +62,10 @@ const Sidebar = props => {
 			<div className="img-card">
 				{
 					props.photo ?
-						<img src={props.photo.urls.small} alt={props.photo.alt_description} />
+						<button onClick={props.onViewImage}>
+							<img src={props.photo.urls.small} alt={props.photo.alt_description} />
+							<span>VIEW IMAGE</span>
+						</button>
 						:
 						<img src={mumbai} alt={"Default mumbai location"} />
 				}

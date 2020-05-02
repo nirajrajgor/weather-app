@@ -1,4 +1,4 @@
-import { GET_PHOTOS, GET_WEATHER_DATA, GET_FORCAST_DATA } from "./ActionTypes";
+import { GET_PHOTOS, GET_WEATHER_DATA, GET_FORCAST_DATA, CHANGE_DATA_ORDER } from "./ActionTypes";
 import { getRandomInt } from "../utils/ReusableFunctions";
 
 const INITIAL_STATE = {
@@ -29,6 +29,11 @@ const HomeReducer = (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				forcastData: action.data
+			}
+		case CHANGE_DATA_ORDER:
+			return {
+				...state,
+				photos: state.photos.reverse()
 			}
 		default:
 			return state
