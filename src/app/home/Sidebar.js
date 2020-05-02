@@ -1,20 +1,18 @@
 import React from 'react';
 import mumbai from "../../assets/images/mumbai.jpg";
-import searchIcon from "../../assets/images/search-icon.png";
 import { formatDateTime } from '../utils/ReusableFunctions';
+import Search from './_utils/Search';
 
 const Sidebar = props => {
 	return (
 		<>
-			<div className="search-wrapper">
-				<img src={searchIcon} alt="search icon" className="search-icon" />
-				<input
-					type="text"
-					placeholder="Search City"
-					value={props.search}
+			{
+				!props.isMobile &&
+				<Search
+					search={props.search}
 					onChange={props.onChange}
 				/>
-			</div>
+			}
 			<div className="info-card">
 				<h3>Weather Details</h3>
 				{

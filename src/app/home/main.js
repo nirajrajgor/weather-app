@@ -1,15 +1,25 @@
 import React from 'react';
 import mumbai from "../../assets/images/mumbai.jpg";
 import degreeSymbol from "../../assets/images/degree-symbol.png";
+import Search from './_utils/Search';
 
 const Main = props => {
 	return (
 		<div className="main-wrapper">
 			{
 				props.photo ?
-					<img src={props.photo.urls.regular} alt={props.photo.alt_description} />
+					<img
+						src={props.isMobile ? props.photo.urls.small : props.photo.urls.regular}
+						alt={props.photo.alt_description} />
 					:
 					<img src={mumbai} alt={"Default mumbai location"} />
+			}
+			{
+				props.isMobile &&
+				<Search
+					search={props.search}
+					onChange={props.onChange}
+				/>
 			}
 			<div className="info-wrapper">
 				{
