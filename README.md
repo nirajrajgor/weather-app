@@ -17,11 +17,9 @@ npm i
 
 ## Usage
 
-### Create `.env` folder at root level to store credentials for apis
+### Create `.env` file at root level to store credentials for apis
 ```
-mkdir .env
-
-// Add .env folder to gitignore
+// Add .env file to gitignore
 
 // For Unsplash api
 REACT_APP_UNSPLASH_ACCESS_KEY=value
