@@ -18,7 +18,7 @@ export const searchPhotoApi = (cityName = "mumbai") => {
 
 export const getWeatherApi = (cityName = "mumbai") => {
 	return function (dispatch, getState) {
-		fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.REACT_APP_WEATHER_APP_ID}&units=metric`)
+		fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.REACT_APP_WEATHER_APP_ID}&units=metric`)
 			.then((response) => {
 				return response.json();
 			})
@@ -33,7 +33,7 @@ export const getWeatherApi = (cityName = "mumbai") => {
 
 export const getForcastApi = (cityName = "mumbai") => {
 	return function (dispatch, getState) {
-		fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.REACT_APP_WEATHER_APP_ID}&units=metric`)
+		fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.REACT_APP_WEATHER_APP_ID}&units=metric`)
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data);
