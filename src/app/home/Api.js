@@ -3,7 +3,7 @@ import { unsplash } from "../../App";
 import { getPhotos, getWeather, getForcast } from './HomeAction';
 
 export const searchPhotoApi = (cityName = "mumbai") => {
-	return function (dispatch, getState) {
+	return function (dispatch) {
 		unsplash.search.photos(cityName, 1, 10, { orientation: "landscape" })
 			.then(toJson)
 			.then(json => {
@@ -17,13 +17,12 @@ export const searchPhotoApi = (cityName = "mumbai") => {
 }
 
 export const getWeatherApi = (cityName = "mumbai") => {
-	return function (dispatch, getState) {
+	return function (dispatch) {
 		fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.REACT_APP_WEATHER_APP_ID}&units=metric`)
 			.then((response) => {
 				return response.json();
 			})
 			.then((data) => {
-				console.log(data);
 				dispatch(getWeather(data));
 			}).catch((error) => {
 				console.error('Error:', error);
@@ -32,11 +31,10 @@ export const getWeatherApi = (cityName = "mumbai") => {
 }
 
 export const getForcastApi = (cityName = "mumbai") => {
-	return function (dispatch, getState) {
+	return function (dispatch) {
 		fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${process.env.REACT_APP_WEATHER_APP_ID}&units=metric`)
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
 				dispatch(getForcast(data));
 			}).catch((error) => {
 				console.error('Error:', error);
