@@ -67,7 +67,9 @@ const Sidebar = props => {
 							<span>VIEW IMAGE</span>
 						</button>
 						:
-						<img src={mumbai} alt={"Default mumbai location"} />
+						<button>
+							<img src={mumbai} alt={"Default mumbai location"} />
+						</button>
 				}
 			</div>
 		</>
