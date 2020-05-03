@@ -1,6 +1,6 @@
 # Weather app
 A weather app which uses [open weather api](http://openweathermap.org/) to show current weather, forecast and [unsplash](https://unsplash.com/) api to show picture related to that city. User can type city name to get the data.
-[View Demo](https://nirajrajgor.github.io/weather-app/)
+</br>[View Demo](https://nirajrajgor.github.io/weather-app/)
 
 ## Purpose
 * Implement the concept of [redux](https://redux.js.org/).
