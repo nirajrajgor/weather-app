@@ -2,6 +2,7 @@ import React from 'react';
 import mumbai from "../../assets/images/mumbai.jpg";
 import degreeSymbol from "../../assets/images/degree-symbol.png";
 import Search from './_utils/Search';
+import GithubLink from './_utils/GithubLink';
 
 const Main = props => {
 	return (
@@ -34,6 +35,9 @@ const Main = props => {
 									<h1><strong>{props.weather.name}</strong></h1>
 									<h3>{new Date().toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</h3>
 								</div>
+								{
+									!props.isMobile && <GithubLink />
+								}
 							</>
 							:
 							<h2>{props.weather.message}</h2>

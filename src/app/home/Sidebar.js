@@ -2,6 +2,7 @@ import React from 'react';
 import mumbai from "../../assets/images/mumbai.jpg";
 import { formatDateTime } from '../utils/ReusableFunctions';
 import Search from './_utils/Search';
+import GithubLink from './_utils/GithubLink';
 
 const Sidebar = props => {
 	return (
@@ -72,6 +73,9 @@ const Sidebar = props => {
 						</button>
 				}
 			</div>
+			{
+				props.isMobile && <GithubLink />
+			}
 		</>
 
 	);

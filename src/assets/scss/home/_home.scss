@@ -57,6 +57,12 @@
 				margin: 0.3rem 0 0;
 			}
 		}
+		.github-link {
+			margin-top: 5rem;
+			a {
+				color: rgba(255, 255, 255, 0.9);
+			}
+		}
 	}
 }
 
@@ -145,5 +151,13 @@
 			z-index: 1;
 			@include font($white, "OpenSans-SemiBold", 1.5rem, 600);
 		}
+	}
+}
+
+.github-link {
+	text-align: center;
+	margin-top: 3rem;
+	a {
+		@include font($heading-1, "OpenSans-SemiBold", 1.6rem, 600);
 	}
 }
