@@ -10,6 +10,7 @@ A weather app which uses [open weather api](http://openweathermap.org/) to show 
 
 
 ## Installation
+Install the latest version of Node and npm then follow below commands.
 ```
 git clone https://github.com/nirajrajgor/weather-app.git
 npm i
