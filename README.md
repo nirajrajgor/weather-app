@@ -6,10 +6,11 @@ A weather app which uses [open weather api](http://openweathermap.org/) to show 
 * Implement the concept of [redux](https://redux.js.org/).
 * Implement the react-redux architecture.
 * Implement the [redux-thunk](https://github.com/reduxjs/redux-thunk) along with reactjs.
-* Implement Unsplash & Openweather apis.
+* Integrate Unsplash & Openweather apis.
 
 
 ## Installation
+Install the latest version of Node and npm then follow below commands.
 ```
 git clone https://github.com/nirajrajgor/weather-app.git
 npm i
