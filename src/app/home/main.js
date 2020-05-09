@@ -40,7 +40,7 @@ const Main = props => {
 								}
 							</>
 							:
-							<h2>{props.weather.message}</h2>
+							<h2 class="error">{props.weather.message}</h2>
 						:
 						<h2>Loading...</h2>
 				}

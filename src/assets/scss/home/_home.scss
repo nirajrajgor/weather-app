@@ -161,3 +161,7 @@
 		@include font($heading-1, "OpenSans-SemiBold", 1.6rem, 600);
 	}
 }
+
+.main-wrapper .info-wrapper h2.error {
+	font-size: 3.5rem;
+}
