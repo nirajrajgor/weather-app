@@ -43,6 +43,13 @@ class Home extends Component {
 		this.setState({ search: e.target.value }, () => this.debounced(this.state.search));
 	}
 
+	handleViewImage = () => {
+		this.props.changeDataOrder();
+		// SCROLL TO TOP IF IN MOBILE VIEW.
+		if (this.state.width < 575.98)
+			window.scrollTo({ top: 0, behavior: 'smooth' })
+	}
+
 	updateWindowDimensions = () => {
 		this.setState({ width: window.innerWidth, height: window.innerHeight });
 	}
@@ -70,7 +77,7 @@ class Home extends Component {
 						isMobile={this.state.width < 575.98}
 						search={this.state.search}
 						onChange={this.onChange}
-						onViewImage={this.props.changeDataOrder}
+						onViewImage={this.handleViewImage}
 						weatherData={this.props.homeState.weatherData}
 						forcastData={this.props.homeState.forcastData}
 					/>
