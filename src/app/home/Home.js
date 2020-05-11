@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import Main from './main';
 import Sidebar from './Sidebar';
 import { searchPhotoApi, getWeatherApi, getForcastApi } from './Api';
@@ -96,8 +95,8 @@ const mapDispatchToProps = {
 	getForcastApi,
 	changeDataOrder
 }
-Home.propTypes = {
-	// getPosts: PropTypes.func
-};
+// Home.propTypes = {
+// 	getPosts: PropTypes.func
+// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
