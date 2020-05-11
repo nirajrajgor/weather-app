@@ -3,6 +3,7 @@ import mumbai from "../../assets/images/mumbai.jpg";
 import { formatDateTime } from '../utils/ReusableFunctions';
 import Search from './_utils/Search';
 import GithubLink from './_utils/GithubLink';
+import PropTypes from 'prop-types';
 
 const Sidebar = props => {
 	return (
@@ -80,7 +81,38 @@ const Sidebar = props => {
 
 	);
 };
-// Main.propTypes = {
-// 	getPosts: PropTypes.func
-// };
+
+Sidebar.propTypes = {
+	weatherData: PropTypes.shape({
+		clouds: PropTypes.shape({
+			all: PropTypes.number
+		}),
+		main: PropTypes.shape({
+			pressure: PropTypes.number,
+			humidity: PropTypes.number
+		}),
+		wind: PropTypes.shape({
+			speed: PropTypes.number
+		})
+	}),
+	forcastData: PropTypes.shape({
+		list: PropTypes.arrayOf(
+			PropTypes.shape({
+				dt: PropTypes.number,
+				main: PropTypes.object
+			})
+		)
+	}),
+	photo: PropTypes.shape({
+		alt_description: PropTypes.string,
+		urls: PropTypes.shape({
+			small: PropTypes.string
+		})
+	}),
+	search: PropTypes.string,
+	onChange: PropTypes.func,
+	onViewImage: PropTypes.func,
+	isMobile: PropTypes.bool
+};
+
 export default Sidebar;
