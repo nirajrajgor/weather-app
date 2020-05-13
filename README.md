@@ -1,5 +1,5 @@
 # Weather app
-A weather app which uses [open weather api](http://openweathermap.org/) to show current weather, forecast and [unsplash](https://unsplash.com/) api to show picture related to that city. User can type city name to get the data.
+A weather app which uses [open weather api](http://openweathermap.org/) to show current weather, forecast and [unsplash](https://unsplash.com/) api to show picture related to that city. User can type city name to get the data and yes it's **Mobile Responsive** as well.
 </br></br>
 ![Weather App homepage](./public/weather-app-homepage.jpg?raw=true)
 
