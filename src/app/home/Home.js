@@ -5,6 +5,7 @@ import Sidebar from './Sidebar';
 import { searchPhotoApi, getWeatherApi, getForcastApi } from './Api';
 import { debounce } from '../utils/ReusableFunctions';
 import { changeDataOrder } from './HomeAction';
+import PropTypes from 'prop-types';
 
 class Home extends Component {
 	constructor(props) {
@@ -21,9 +22,8 @@ class Home extends Component {
 		this.updateWindowDimensions();
 		window.addEventListener('resize', this.updateWindowDimensions);
 
-		if (this.props.homeState.photos.length === 0) {
-			this.props.searchPhotoApi();
-		}
+		// TO GET SEARCH API DATA
+		this.props.searchPhotoApi();
 		// TO GET TODAYS WEATHER DATA
 		this.props.getWeatherApi();
 		// TO GET FORCAST DATA FOR NEXT 5 DAYS.
@@ -95,8 +95,12 @@ const mapDispatchToProps = {
 	getForcastApi,
 	changeDataOrder
 }
-// Home.propTypes = {
-// 	getPosts: PropTypes.func
-// };
+Home.propTypes = {
+	homeState: PropTypes.shape({
+		photos: PropTypes.array,
+		weatherData: PropTypes.object,
+		forecastData: PropTypes.object
+	}),
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
