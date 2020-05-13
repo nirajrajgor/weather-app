@@ -3,6 +3,7 @@ import mumbai from "../../assets/images/mumbai.jpg";
 import degreeSymbol from "../../assets/images/degree-symbol.png";
 import Search from './_utils/Search';
 import GithubLink from './_utils/GithubLink';
+import PropTypes from 'prop-types';
 
 const Main = props => {
 	return (
@@ -48,7 +49,23 @@ const Main = props => {
 		</div>
 	);
 };
-// Main.propTypes = {
-// 	getPosts: PropTypes.func
-// };
+Main.propTypes = {
+	isMobile: PropTypes.bool,
+	search: PropTypes.string,
+	onChange: PropTypes.func,
+	photo: PropTypes.shape({
+		alt_description: PropTypes.string,
+		urls: PropTypes.shape({
+			small: PropTypes.string,
+			regular: PropTypes.string
+		})
+	}),
+	weather: PropTypes.shape({
+		main: PropTypes.shape({
+			temp: PropTypes.number,
+		}),
+		name: PropTypes.string,
+		message: PropTypes.string
+	}),
+};
 export default Main;
