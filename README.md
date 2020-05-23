@@ -1,7 +1,7 @@
 # Weather app
-The goal was to experience all the steps involved in product building. Ranging from ideation, design, development, testing and deployment.
+The Goal was to experience all the steps involved in Product building. Ranging from Ideation, Design, Development, Testing and Deployment.
 
-I started by researching on Dribbble and Behance and went through many sample weather app designs. After research i got the rough idea on design and decided to use adobe xd for UI design.
+I started by researching on Dribbble and Behance and went through many sample weather app designs. After research i got the rough idea on design and decided to use adobe XD for UI design.
 
 It took many iteration before getting the final design. Once the design was complete i used react as the underlying development technology and finally deployed using Github pages.
 
