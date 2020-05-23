@@ -1,7 +1,15 @@
 # Weather app
-A weather app which uses [open weather api](http://openweathermap.org/) to show current weather, forecast and [unsplash](https://unsplash.com/) api to show picture related to that city. User can type city name to get the data and yes it's **Mobile Responsive** as well.
+The goal was to experience the all the steps involved in product building. Ranging from ideation, design, development, testing and finally deployment.
+
+I started by researching on Dribbble and Behance and went through many sample weather app designs. After research i decided to use adobe xd for UI design.
+
+It took many iteration before getting the final design. Once the design was complete i used react as the underlying development technology and finally deployed using Github pages.
+
+It uses [open weather api](http://openweathermap.org/) to show current weather, forecast and [unsplash](https://unsplash.com/) api to show picture related to that city. User can type city name to get the data and yes it's **Mobile Responsive** as well.
 </br></br>
 ![Weather App homepage](./public/weather-app-homepage.jpg?raw=true)
+
+Did you find this repo helpful? Please put a **Star** to show your support!
 
 ### [View Demo](https://nirajrajgor.github.io/weather-app/)
 
